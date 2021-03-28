@@ -1,0 +1,32 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/file?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&useSSL=true
+        username: root
+        password: caiyuchao
+    jpa:
+        show-sql: true
+        open-in-view: false
+        database: mysql
+    http:
+        multipart:
+            enabled: true
+            file-size-threshold: 10MB
+            max-file-size: 100MB
+            max-request-size: 100MB
+            resolve-lazily: false
+    servlet:
+      multipart:
+          max-file-size: 100MB
+          max-request-size: 100MB
+server:
+    tomcat:
+        max-swallow-size: 100MB
+# 下载目录
+rootdir: /Users/yuchao/file/
+
+logging:
+    config: classpath:logback-spring.xml
+    file:
+        path: /Users/yuchao/file/log
+
